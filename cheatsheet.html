@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GenAI Leader Cheat Sheet</title>
+<style>
+:root{--ink:#1b1f24;--paper:#f6f8fb;--card:#fff;--slate:#4a5563;--rule:#dfe4ec;--soft:#eef1f6;--link:#0b57d0;
+--d1:#1a73e8;--d1bg:#e8f0fe;--d2:#188038;--d2bg:#e6f4ea;--d3:#b45309;--d3bg:#fef3e0;--d4:#8430ce;--d4bg:#f3e8fd;--bad:#b3261e;--badbg:#fce8e6;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--ink:#e9eef5;--paper:#0e1218;--card:#161b23;--slate:#b3bdca;--rule:#2a3340;--soft:#1d242e;--link:#8ab4f8;
+--d1:#8ab4f8;--d1bg:#1b2a44;--d2:#81c995;--d2bg:#16301f;--d3:#fdc069;--d3bg:#3a2a10;--d4:#d7aefb;--d4bg:#2d1d42;--bad:#f28b82;--badbg:#3c1b19;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.45;font-size:15px}
+a{color:var(--link)}
+:focus-visible{outline:3px solid var(--link);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:24px 16px 50px}
+header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:10px;border-bottom:3px solid var(--ink);padding-bottom:12px;margin-bottom:16px}
+h1{margin:0;font-size:clamp(22px,4vw,32px);letter-spacing:-.02em}
+.sub{color:var(--slate);font-size:13.5px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.box{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:12px 14px}
+.box h2{margin:0 0 6px;font-size:14px;text-transform:uppercase;letter-spacing:.05em}
+.d1 h2{color:var(--d1)}.d2 h2{color:var(--d2)}.d3 h2{color:var(--d3)}.d4 h2{color:var(--d4)}.tr h2{color:var(--bad)}
+.box.d1{border-top:4px solid var(--d1)}.box.d2{border-top:4px solid var(--d2)}.box.d3{border-top:4px solid var(--d3)}.box.d4{border-top:4px solid var(--d4)}.box.tr{border-top:4px solid var(--bad)}
+ul{margin:4px 0;padding-left:18px}li{margin:3px 0}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{text-align:left;padding:5px 8px;border-bottom:1px solid var(--soft);vertical-align:top}
+th{font-size:11.5px;text-transform:uppercase;color:var(--slate);border-bottom:2px solid var(--rule)}
+.tbl{overflow-x:auto}
+.full{grid-column:1/-1}
+.note{background:var(--d3bg);border-left:4px solid var(--d3);padding:8px 12px;border-radius:0 8px 8px 0;font-size:13.5px;margin-top:12px}
+.search{width:100%;max-width:420px;padding:8px 12px;font:inherit;border:2px solid var(--rule);border-radius:8px;background:var(--card);color:var(--ink);margin:4px 0 8px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media print{.search,.nav{display:none}body{font-size:11px}.wrap{padding:0}.box{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div><h1>Generative AI Leader — cheat sheet</h1><div class="sub">Unofficial. Facts checked 15 Nov 2026 against Google's <a href="https://cloud.google.com/learn/certification/generative-ai-leader">certification page</a> and <a href="https://services.google.com/fh/files/misc/generative_ai_leader_exam_guide_english.pdf">exam guide</a>. Verify before you rely on them.</div></div>
+  <div class="nav"><a href="index.html">← Study hub</a></div>
+</header>
+
+<div class="grid">
+<div class="box full"><h2>Exam in one line</h2>
+50–60 multiple-choice questions · 90 minutes · $99 plus tax · English, Japanese, Spanish · online or test centre · valid 3 years · no prerequisites.
+Weights: <b>D1 Fundamentals ~30%</b> · <b>D2 Google Cloud offerings ~35%</b> · <b>D3 Improving output ~20%</b> · <b>D4 Business strategy ~15%</b>. Passing score: not verified.
+</div>
+
+<div class="box d1"><h2>D1 · Fundamentals</h2><ul>
+<li>AI ⊃ ML ⊃ (deep learning, <b>gen AI = creates new content</b>)</li>
+<li>Supervised = labelled · Unsupervised = patterns, no labels · Reinforcement = rewards</li>
+<li>Structured = rows/columns · Unstructured = text, image, audio, video</li>
+<li>ML lifecycle: ingest → prepare → train → deploy → manage</li>
+<li>Landscape: infrastructure → models → platforms → agents → applications</li>
+<li>Foundation model = big, general, adaptable · LLM = for language · multimodal = many data types · diffusion = images from noise</li>
+<li>Token = text piece · Context window = how much fits now · Temperature = randomness · Hallucination = confident false answer</li>
+<li>Choose a model: modality, context window, security, availability, cost, performance, customisation</li>
+<li>Use cases: create, summarise, discover, automate</li>
+<li><b>Gemini</b> multimodal · <b>Gemma</b> open · <b>Imagen</b> image · <b>Veo</b> video</li></ul></div>
+
+<div class="box d2"><h2>D2 · Google offerings</h2><ul>
+<li>Strengths: AI-first, enterprise-ready, ecosystem, open approach, TPUs/GPUs/hypercomputer, data control, democratised AI</li>
+<li><b>Gemini app</b> (Gems) = personal assistant</li>
+<li><b>Gemini Enterprise</b> = workplace search + agents on company data</li>
+<li><b>Gemini for Workspace</b> = AI in Gmail/Docs/Slides/Meet</li>
+<li><b>Gemini Notebook (NotebookLM)</b> = answers from your sources</li>
+<li><b>Gemini for Google Cloud</b> = assistant for builders</li>
+<li><b>Agent Platform</b> (ex Vertex AI) = build, tune, deploy · <b>Model Garden</b> = model catalog · <b>AutoML</b> = little ML skill</li>
+<li><b>Agent Studio</b> (ex Vertex AI Studio) = production · <b>Google AI Studio</b> = free prototype</li>
+<li><b>Agent Search</b> (ex Vertex AI Search) = ready search + RAG</li>
+<li>Customer service: <b>Conversational Agents</b> (customers) · <b>Agent Assist</b> (live humans) · <b>Conversational Insights</b> (analysis) · <b>CCaaS</b></li>
+<li>Agent = model + reasoning loop + tools · tools: extensions, functions, data stores, plugins</li>
+<li>Edge: <b>Gemini Nano</b>, <b>LiteRT</b></li></ul></div>
+
+<div class="box d3"><h2>D3 · Improving output</h2><ul>
+<li>Limits: data dependency, knowledge cutoff, bias, fairness, hallucination, edge cases</li>
+<li>Fixes: prompt (easy) → grounding/RAG → fine-tuning · plus human in the loop · monitor drift</li>
+<li>Prompting: zero-shot (0 examples), one-shot (1), few-shot (several), role, prompt chaining, chain-of-thought (reason step by step), ReAct (reason + act), metaprompting</li>
+<li>Grounding data: first-party (yours), third-party, world (web)</li>
+<li>RAG: retrieve → augment → generate (open-book exam)</li>
+<li>Google Cloud grounding: prebuilt RAG (Agent Search) · RAG APIs · Grounding with Google Search</li>
+<li>Settings: <b>temperature</b> randomness · <b>top-p</b> word-pool size · <b>safety settings</b> filter · <b>output length</b> max size · token count</li>
+<li>Monitoring: versioning (Model Registry), KPIs, drift (Model Monitoring), Feature Store, Pipelines</li></ul></div>
+
+<div class="box d4"><h2>D4 · Business strategy</h2><ul>
+<li>Start focused, clear value, measure impact against a baseline</li>
+<li>Needs: scale, customisation, interaction, privacy, latency, connectivity · Resources: people, money, time</li>
+<li>Top-down vision + bottom-up ideas · change management · pilot first</li>
+<li>Ready product (fast) → customise → build (most effort)</li>
+<li><b>Secure AI</b>: whole lifecycle · <b>SAIF</b> = Google's Secure AI Framework · <b>IAM</b> who can do what · <b>Security Command Center</b> posture</li>
+<li><b>Responsible AI</b>: transparency, privacy, bias/fairness, accountability, explainability</li>
+<li>Anonymisation = identity removed · Pseudonymisation = code, reversible with a key</li></ul></div>
+
+<div class="box tr"><h2>Top traps</h2><ul>
+<li>RAG (look up at question time) ≠ fine-tuning (train the model)</li>
+<li>Prompt engineering (how you ask) ≠ grounding (what facts it sees)</li>
+<li>AI Studio (free, prototype) ≠ Agent Studio (production)</li>
+<li>Gemini (model) ≠ Gemini Enterprise (workplace product) ≠ Gemini app (chat)</li>
+<li>Gemma = open developer model, not “small Gemini”</li>
+<li>Agent Assist helps humans · Conversational Agents talk to customers</li>
+<li>Temperature/top-p change randomness, they do not add facts</li>
+<li>Gen AI is part of ML, not bigger than it</li>
+<li>Old names in old videos: Vertex AI = Agent Platform</li></ul></div>
+
+<div class="box full"><h2>Keyword → service quick reference</h2>
+<label class="sr" for="f">Filter</label><input id="f" class="search" type="search" placeholder="Filter, for example: video, search, speech…" autocomplete="off">
+<div class="tbl"><table id="t"><thead><tr><th>Keyword in the question</th><th>Service</th><th>D</th></tr></thead><tbody>
+<tr><td>text to image</td><td>Imagen</td><td>1</td></tr>
+<tr><td>text/images to video</td><td>Veo</td><td>1</td></tr>
+<tr><td>multimodal, powers Google products</td><td>Gemini</td><td>1</td></tr>
+<tr><td>open model, local, customise</td><td>Gemma</td><td>1</td></tr>
+<tr><td>on-device, edge</td><td>Gemini Nano, LiteRT</td><td>2</td></tr>
+<tr><td>Google's AI chip</td><td>TPU</td><td>2</td></tr>
+<tr><td>employees search company data, agents</td><td>Gemini Enterprise</td><td>2</td></tr>
+<tr><td>AI in Gmail, Docs, Slides, Meet</td><td>Gemini for Google Workspace</td><td>2</td></tr>
+<tr><td>personal chat assistant, Gems</td><td>Gemini app (Gemini Advanced)</td><td>2</td></tr>
+<tr><td>only my uploaded sources, audio overview</td><td>Gemini Notebook (NotebookLM)</td><td>2</td></tr>
+<tr><td>code and cloud help for builders</td><td>Gemini for Google Cloud (Code Assist)</td><td>2</td></tr>
+<tr><td>build, tune, deploy models and agents</td><td>Gemini Enterprise Agent Platform (ex Vertex AI)</td><td>2</td></tr>
+<tr><td>model catalog</td><td>Model Garden</td><td>2</td></tr>
+<tr><td>train with little ML skill</td><td>Agent Platform AutoML</td><td>2</td></tr>
+<tr><td>production prompts and apps</td><td>Agent Studio (ex Vertex AI Studio)</td><td>2</td></tr>
+<tr><td>free, quick Gemini API prototype</td><td>Google AI Studio</td><td>2</td></tr>
+<tr><td>ready search + prebuilt RAG</td><td>Agent Search (ex Vertex AI Search)</td><td>2,3</td></tr>
+<tr><td>where deployed agents run</td><td>Agent Runtime (ex Agent Engine)</td><td>2</td></tr>
+<tr><td>virtual agent for customers</td><td>Conversational Agents</td><td>2</td></tr>
+<tr><td>help live human agents</td><td>Agent Assist</td><td>2</td></tr>
+<tr><td>analyse many conversations</td><td>Conversational Insights</td><td>2</td></tr>
+<tr><td>cloud contact centre</td><td>CCaaS</td><td>2</td></tr>
+<tr><td>speech to text</td><td>Speech-to-Text API</td><td>2</td></tr>
+<tr><td>text to speech</td><td>Text-to-Speech API</td><td>2</td></tr>
+<tr><td>translate text</td><td>Translation API</td><td>2</td></tr>
+<tr><td>translate documents, keep layout</td><td>Document Translation API</td><td>2</td></tr>
+<tr><td>extract data from forms and invoices</td><td>Document AI API</td><td>2</td></tr>
+<tr><td>analyse images, landmarks, moderation</td><td>Cloud Vision API</td><td>2</td></tr>
+<tr><td>analyse video, scenes</td><td>Cloud Video Intelligence API</td><td>2</td></tr>
+<tr><td>sentiment, entities in text</td><td>Natural Language API</td><td>2</td></tr>
+<tr><td>run code without servers</td><td>Cloud Run / Cloud Functions</td><td>2</td></tr>
+<tr><td>fresh web information</td><td>Grounding with Google Search</td><td>3</td></tr>
+<tr><td>build my own retrieval</td><td>RAG APIs</td><td>3</td></tr>
+<tr><td>accuracy falls over time</td><td>Drift → Model Monitoring</td><td>3</td></tr>
+<tr><td>model versions</td><td>Model Registry</td><td>3</td></tr>
+<tr><td>automate ML steps</td><td>Pipelines</td><td>3</td></tr>
+<tr><td>who can access what</td><td>IAM</td><td>4</td></tr>
+<tr><td>security posture and risks</td><td>Security Command Center</td><td>4</td></tr>
+<tr><td>Google's AI security framework</td><td>SAIF</td><td>4</td></tr>
+</tbody></table></div></div>
+
+<div class="box full"><h2>Names, old → new (verified in Google release notes)</h2>
+Vertex AI → <b>Gemini Enterprise Agent Platform</b> (Agent Platform), announced 22 Apr 2026 · Vertex AI Studio → <b>Agent Studio</b> · Vertex AI Search → <b>Agent Search</b> · Vertex AI Agent Engine → <b>Agent Runtime</b> · Vertex AI Model Garden → <b>Model Garden</b> · NotebookLM ≈ <b>Gemini Notebook</b> (both names used) · Customer Engagement Suite ≈ <b>Gemini Enterprise for Customer Experience</b> (two names in two Google documents).
+</div>
+</div>
+<p class="note"><b>Disclaimer.</b> Unofficial study guidance, not Google's answer key. Check <a href="https://cloud.google.com/learn/certification/generative-ai-leader">Google's certification page</a> for the latest rules, price and exam guide. Google and Gemini are trademarks of Google LLC.</p>
+</div>
+<script>
+(function(){var f=document.getElementById('f');if(!f)return;f.addEventListener('input',function(){var v=f.value.toLowerCase().trim();Array.prototype.forEach.call(document.querySelectorAll('#t tbody tr'),function(r){r.hidden=!!v&&r.textContent.toLowerCase().indexOf(v)<0;});});})();
+</script>
+</body>
+</html>
